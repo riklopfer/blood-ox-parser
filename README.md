@@ -1,6 +1,6 @@
 # blood-ox-parser
 
-Extract blood oxygen measurements from Apple Health XML export and write to CSV. 
+Extract blood oxygen and atmospheric pressure measurements (in kPa) from Apple Health XML export and write to CSV. 
 
 ```
 usage: extract-blood-ox-csv.py [-h] [--export EXPORT] [--output OUTPUT]
