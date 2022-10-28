@@ -11,8 +11,13 @@ optional arguments:
   --output OUTPUT  Write CSV to this file
 ```
 
+Sample usage
 
-Sample output
+```shell
+python3 ./extract-blood-ox-csv.py --export ~/Downloads/apple_health_export/export.xml 
+```
+
+Sample output (`./bloodox.csv`)
 
 ```csv
 Time,BloodOx,AtmPressure

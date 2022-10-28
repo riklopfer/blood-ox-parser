@@ -1,4 +1,8 @@
 #! /usr/bin/env python3
+"""
+Extract blood oxygen and atmospheric pressure measurements (in kPa) from Apple Health XML export and write to CSV.
+
+"""
 import argparse
 import csv
 import dataclasses
@@ -67,7 +71,7 @@ def main(args: argparse.Namespace):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--export",
         help="path to health data export",
