@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 """
-Convert kPa to elevation above sea level in meters. Make a histogram of blood ox vs elevation. 
+Convert kPa to elevation above sea level in meters. Make a histogram of blood ox vs elevation.
 """
 import argparse
 import csv
@@ -31,12 +31,16 @@ def get_hist_bin(elevation: float) -> float:
 
 
 def hist_to_str(histogram: Dict) -> str:
+    ns = [len(_) for _ in histogram.values()]
+    minsize = min(ns)
+    maxsize = max(ns)
+    step = max((maxsize - minsize) // 10, 1)
     s = ""
     for elevation in sorted(histogram.keys()):
         values = histogram[elevation]
         mean = sum(values, 0) / len(values)
         stdv = sqrt(sum(((value - mean) ** 2 for value in values)) / len(values))
-        s += f"{elevation} :: n={len(values)} μ={mean:.5f} σ={stdv:.5f}\n"
+        s += f"{elevation} {'*' * (len(values) // step)} :: n={len(values)} μ={mean:.5f} σ={stdv:.5f}\n"
     return s
 
 
