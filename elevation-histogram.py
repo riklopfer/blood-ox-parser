@@ -69,7 +69,7 @@ if __name__ == "__main__":
     )
 
     parser.add_argument(
-        "--bin-width", help="Bin width for histogram", type=int, default=100, choices=[1, 10, 100, 1000]
+        "--bin-width", help="Bin width for histogram", type=int, default=100
     )
 
     main(parser.parse_args())
